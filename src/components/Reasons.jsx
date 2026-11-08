@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const reasons = [
-  'Your beautiful smile that lights up every room.',
-  'Your caring heart that always thinks of others.',
+  'Your beautiful smile ',
+  'Your caring heart for me',
   'Your little silly moments that make me love you more.',
-  'The way you make me laugh even on my worst days.',
-  'Your beautiful personality that inspires everyone.',
+  'your efforts',
+  'Your beautiful personality .',
   'Your kindness that makes the world better.',
-  'Your unwavering support through everything.',
-  'Your presence that makes everything feel like home.',
-  'Our unforgettable memories that I treasure forever.',
+  'Your spport',
+  'Your whiteness',
+  'Your Gussa ! ',
   "Simply because you're YOU — and that's more than enough. ❤️",
 ];
 
