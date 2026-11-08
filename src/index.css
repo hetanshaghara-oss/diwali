@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=Poppins:wght@300;400;500;600&display=swap");
+@import "tailwindcss";
+
+/* ===== CSS Custom Properties ===== */
+:root {
+  --midnight-black: #100B16;
+  --deep-maroon: #450D19;
+  --royal-red: #8B1729;
+  --antique-gold: #D4AF37;
+  --warm-gold: #FFD98A;
+  --cream: #FFF2D8;
+}
+
+/* ===== Base Styles ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--midnight-black);
+  color: var(--cream);
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Font Classes ===== */
+.font-playfair {
+  font-family: "Playfair Display", serif;
+}
+
+/* ===== Selection Styling ===== */
+::selection {
+  background-color: var(--antique-gold);
+  color: var(--midnight-black);
+}
+
+::-moz-selection {
+  background-color: var(--antique-gold);
+  color: var(--midnight-black);
+}
+
+/* ===== Custom Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--midnight-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--antique-gold), var(--deep-maroon));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--warm-gold), var(--royal-red));
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--antique-gold) var(--midnight-black);
+}
+
+/* ===== Glassmorphism Utilities ===== */
+.glass {
+  background: rgba(16, 11, 22, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.glass-light {
+  background: rgba(255, 242, 216, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.glass-dark {
+  background: rgba(16, 11, 22, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.glass-gold {
+  background: rgba(212, 175, 55, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+/* ===== Glow Effects ===== */
+.glow-gold {
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3),
+    0 0 30px rgba(212, 175, 55, 0.15),
+    0 0 60px rgba(212, 175, 55, 0.08);
+}
+
+.glow-gold-strong {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5),
+    0 0 40px rgba(212, 175, 55, 0.25),
+    0 0 80px rgba(212, 175, 55, 0.15);
+}
+
+.glow-red {
+  box-shadow: 0 0 15px rgba(139, 23, 41, 0.4),
+    0 0 30px rgba(139, 23, 41, 0.2),
+    0 0 60px rgba(139, 23, 41, 0.1);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5),
+    0 0 20px rgba(212, 175, 55, 0.3),
+    0 0 40px rgba(212, 175, 55, 0.15);
+}
+
+.text-glow-cream {
+  text-shadow: 0 0 8px rgba(255, 242, 216, 0.4),
+    0 0 16px rgba(255, 242, 216, 0.2);
+}
+
+/* ===== Gradient Classes ===== */
+.gradient-gold {
+  background: linear-gradient(135deg, var(--antique-gold), var(--warm-gold));
+}
+
+.gradient-gold-text {
+  background: linear-gradient(135deg, var(--antique-gold), var(--warm-gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-maroon {
+  background: linear-gradient(135deg, var(--deep-maroon), var(--royal-red));
+}
+
+.gradient-night {
+  background: linear-gradient(180deg, var(--midnight-black), var(--deep-maroon));
+}
+
+.gradient-radial-glow {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(212, 175, 55, 0.12) 0%,
+    rgba(139, 23, 41, 0.06) 40%,
+    transparent 70%
+  );
+}
+
+/* ===== Keyframe Animations ===== */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3),
+      0 0 30px rgba(212, 175, 55, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.5),
+      0 0 50px rgba(212, 175, 55, 0.25),
+      0 0 80px rgba(212, 175, 55, 0.12);
+  }
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  10% {
+    opacity: 0.85;
+    transform: scale(0.97) rotate(-1deg);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.02) rotate(1deg);
+  }
+  30% {
+    opacity: 0.9;
+    transform: scale(0.98) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.01) rotate(-0.5deg);
+  }
+  70% {
+    opacity: 0.88;
+    transform: scale(0.99) rotate(0.5deg);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===== Animation Utility Classes ===== */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-flicker {
+  animation: flicker 2.5s ease-in-out infinite;
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.6s ease-out forwards;
+}
